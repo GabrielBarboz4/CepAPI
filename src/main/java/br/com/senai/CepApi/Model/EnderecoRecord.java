@@ -10,5 +10,4 @@ public record EnderecoRecord(    @JsonAlias("cep") String cep,
                                  @JsonAlias("localidade") String cidade,
                                  @JsonAlias("estado") String estado,
                                  @JsonAlias("uf") String uf
-
 ) {}

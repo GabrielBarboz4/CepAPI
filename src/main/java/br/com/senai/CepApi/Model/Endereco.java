@@ -1,7 +1,12 @@
 package br.com.senai.CepApi.Model;
 
+import jakarta.persistence.*;
+
+@Entity @Table(name = "endereco")
 public class Endereco {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String cep;
     private String rua;
     private String bairro;
@@ -75,5 +80,15 @@ public class Endereco {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return  "\nCEP: " + cep +
+                "\nRua: " + rua +
+                "\nBairro: " + bairro +
+                "\nCidade: " + cidade +
+                "\nUF: " + uf +
+                "\nEstado: " + estado+ "\n";
     }
 }
